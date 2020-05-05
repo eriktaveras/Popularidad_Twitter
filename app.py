@@ -3,7 +3,7 @@ import tweepy
 from tweepy import OAuthHandler 
 from textblob import TextBlob 
 
-nombre_objetivo = input("Input Search  : ")
+Name = input("Input Search  : ")
 
 class TwitterClient(object): 
 	def __init__(self): 
@@ -60,7 +60,7 @@ class TwitterClient(object):
 
 def main(): 
 	api = TwitterClient() 
-	tweets = api.get_tweets(query = nombre_objetivo, count = 200) 
+	tweets = api.get_tweets(query = name, count = 200) 
 
 	ptweets = [tweet for tweet in tweets if tweet['sentiment'] == 'positive'] 
 	print("Positive tweets percentage: {} %".format(100*len(ptweets)/len(tweets))) 
